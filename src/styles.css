@@ -2,3 +2,40 @@
 body {
   background-color: white;
 }
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.unit-buttons {
+  display: flex;
+  gap: 0px;
+  margin-top: 10px;
+}
+
+.celcius {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: none;
+  border-right: 1px solid #ccc;
+  height: 35px;
+  width: 80px;
+}
+
+.fahrenheit {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: none;
+  border-left: 1px solid #ccc;
+  height: 35px;
+  width: 80px;
+}
+
+.active {
+  background-color: #75aeea;
+  color: white;
+}

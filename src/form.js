@@ -8,12 +8,16 @@ celcius.addEventListener("click", () => {
   let query = input.value;
   handleWeather(query, "metric");
   input.value = "";
+  celcius.classList.add("active");
+  fahrenheit.classList.remove("active");
 });
 
 fahrenheit.addEventListener("click", () => {
   let query = input.value;
   handleWeather(query, "us");
   input.value = "";
+  fahrenheit.classList.add("active");
+  celcius.classList.remove("active");
 });
 
 input.addEventListener("keydown", (event) => {
@@ -21,5 +25,7 @@ input.addEventListener("keydown", (event) => {
     const query = input.value;
     handleWeather(query, "metric");
     input.value = "";
+    celcius.classList.add("active");
+    fahrenheit.classList.remove("active");
   }
 });
