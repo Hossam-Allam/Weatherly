@@ -19,8 +19,8 @@ async function weather(query = null, unit = "metric") {
 export function printForecast({ data, unit }) {
   console.log(data.description);
 
-  const tempUnit = unit === "imperial" ? "°F" : "°C";
-  const speedUnit = unit === "imperial" ? "mph" : "km/h";
+  const tempUnit = unit === "us" ? "°F" : "°C";
+  const speedUnit = unit === "us" ? "mph" : "km/h";
 
   data.days.slice(0, 5).forEach((day, idx) => {
     console.log(`Day ${idx + 1} (${day.datetime}):`);

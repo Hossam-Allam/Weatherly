@@ -1,11 +1,18 @@
 import { handleWeather, printForecast } from "./ weather";
 
-const button = document.querySelector(".submit");
+const celcius = document.querySelector(".celcius");
+const fahrenheit = document.querySelector(".fahrenheit");
 const input = document.querySelector("#location");
 
-button.addEventListener("click", () => {
+celcius.addEventListener("click", () => {
   let query = input.value;
-  handleWeather(query);
+  handleWeather(query, "metric");
+  input.value = "";
+});
+
+fahrenheit.addEventListener("click", () => {
+  let query = input.value;
+  handleWeather(query, "us");
   input.value = "";
 });
 
