@@ -1,4 +1,4 @@
-import { handleWeather } from "./ weather";
+import { handleWeather, printForecast } from "./ weather";
 
 const button = document.querySelector(".submit");
 const input = document.querySelector("#location");
@@ -12,7 +12,7 @@ button.addEventListener("click", () => {
 input.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     const query = input.value;
-    handleWeather(query);
+    handleWeather(query, "metric");
     input.value = "";
   }
 });
