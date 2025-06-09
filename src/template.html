@@ -7,15 +7,32 @@
   </head>
   <body>
     <div class="form">
-      <input
-        type="text"
-        id="location"
-        autocomplete="off"
-        placeholder="Enter city…"
-      />
-      <ul id="suggestions-list" class="suggestions-list"></ul>
+      <div class="site-name">
+        <img
+          src="icons/cloud-icon.png"
+          alt="cloud"
+          ,
+          width="50px"
+          ,
+          height="50px"
+        />
+        <h1>Weather<span>ly</span></h1>
+      </div>
+
+      <div class="header">
+        <input
+          type="text"
+          id="location"
+          autocomplete="off"
+          placeholder="Enter city…"
+        />
+        <ul id="suggestions-list" class="suggestions-list"></ul>
+      </div>
+    </div>
+
+    <div class="main">
       <div class="unit-buttons">
-        <button class="celcius">°C</button>
+        <button class="celcius active">°C</button>
         <button class="fahrenheit">°F</button>
       </div>
     </div>

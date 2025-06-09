@@ -17,20 +17,20 @@ async function weather(query = null, unit = "metric") {
 }
 
 export function printForecast({ data, unit }) {
-  console.log(data.description);
+  console.log(data);
 
-  const tempUnit = unit === "us" ? "°F" : "°C";
-  const speedUnit = unit === "us" ? "mph" : "km/h";
+  // const tempUnit = unit === "us" ? "°F" : "°C";
+  // const speedUnit = unit === "us" ? "mph" : "km/h";
 
-  data.days.slice(0, 5).forEach((day, idx) => {
-    console.log(`Day ${idx + 1} (${day.datetime}):`);
-    console.log(
-      `  • Temp: ${day.temp}${tempUnit} (Feels like ${day.feelslike}${tempUnit})`
-    );
-    console.log(`  • Conditions: ${day.conditions}`);
-    console.log(`  • Wind: ${day.windspeed}${speedUnit}`);
-    console.log("---");
-  });
+  // data.days.slice(0, 5).forEach((day, idx) => {
+  //   console.log(`Day ${idx + 1} (${day.datetime}):`);
+  //   console.log(
+  //     `  • Temp: ${day.temp}${tempUnit} (Feels like ${day.feelslike}${tempUnit})`
+  //   );
+  //   console.log(`  • Conditions: ${day.conditions}`);
+  //   console.log(`  • Wind: ${day.windspeed}${speedUnit}`);
+  //   console.log("---");
+  // });
 }
 
 export const handleWeather = function handleWeather(query, unit) {

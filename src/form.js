@@ -4,6 +4,7 @@ const celcius = document.querySelector(".celcius");
 const fahrenheit = document.querySelector(".fahrenheit");
 const input = document.querySelector("#location");
 let unit = "metric";
+let query = "London";
 
 const API_KEY = "32175847564948128c630944250906"; //its a free key
 const listEl = document.querySelector("#suggestions-list");
@@ -35,7 +36,7 @@ async function fetchSuggestions() {
   // allow click-to-select
   listEl.querySelectorAll(".suggestion-item").forEach((li) => {
     li.addEventListener("click", () => {
-      input.value = li.textContent;
+      query = input.value = li.textContent;
       listEl.innerHTML = "";
       handleWeather(input.value, unit);
       handleButtonClass();
@@ -45,7 +46,6 @@ async function fetchSuggestions() {
 
 // rest of stuff
 celcius.addEventListener("click", () => {
-  let query = input.value;
   unit = "metric";
   handleWeather(query, "metric");
   input.value = "";
@@ -53,7 +53,6 @@ celcius.addEventListener("click", () => {
 });
 
 fahrenheit.addEventListener("click", () => {
-  let query = input.value;
   unit = "us";
   handleWeather(query, unit);
   input.value = "";
