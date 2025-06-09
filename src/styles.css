@@ -1,6 +1,12 @@
 /* styles.css */
 body {
-  background-color: white;
+  background: linear-gradient(
+    to bottom right,
+    rgb(44, 46, 57),
+    rgb(104, 109, 133)
+  );
+  background-repeat: no-repeat;
+  height: 98vh;
 }
 
 .form {
@@ -38,4 +44,16 @@ body {
 .active {
   background-color: #75aeea;
   color: white;
+}
+
+#location {
+  width: 200px;
+  height: 20px;
+  padding: 0 10px;
+  border: none;
+  border-color: white;
+  background-color: #ababc4;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
 }
