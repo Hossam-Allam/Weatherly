@@ -1,4 +1,4 @@
-const ICON_MAP = {
+export const ICON_MAP = {
   snow: "icons/cloud-snow.svg",
   fog: "icons/fog.svg",
   rain: "icons/cloud-rain.svg",
