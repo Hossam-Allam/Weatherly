@@ -57,3 +57,29 @@ body {
   border-radius: 5px;
   font-weight: bold;
 }
+
+.suggestions-list {
+  overflow-y: auto;
+
+  background: #f0f4f8;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  margin-top: 5px;
+  list-style: none;
+  z-index: 10;
+}
+
+.suggestion-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #333;
+}
+
+.suggestion-item:hover,
+.suggestion-item:focus {
+  background: #e2e8f0; /* slightly darker hover */
+}

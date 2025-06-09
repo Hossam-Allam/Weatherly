@@ -7,7 +7,13 @@
   </head>
   <body>
     <div class="form">
-      <input type="text" id="location" />
+      <input
+        type="text"
+        id="location"
+        autocomplete="off"
+        placeholder="Enter city…"
+      />
+      <ul id="suggestions-list" class="suggestions-list"></ul>
       <div class="unit-buttons">
         <button class="celcius">°C</button>
         <button class="fahrenheit">°F</button>
