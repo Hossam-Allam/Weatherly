@@ -141,3 +141,18 @@ body {
   background-color: rgb(142, 154, 219);
   color: white;
 }
+
+.info {
+  padding: 10px;
+}
+
+.temp {
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgb(79, 54, 116);
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+}
