@@ -95,7 +95,11 @@ body {
 /* Main Card Styles */
 
 .main {
-  background-color: rgb(209, 209, 209);
+  background-image: url(https://alexandrugatea.com/odin/odinweather/images/bg_night.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /*background-color: rgb(209, 209, 209);*/
   height: 80vh;
   width: 90vw;
   margin: 30px auto;
