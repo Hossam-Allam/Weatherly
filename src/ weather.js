@@ -3,6 +3,8 @@ import { ICON_MAP } from "./iconmap";
 const city = document.querySelector(".city");
 const description = document.querySelector(".description");
 const temp = document.querySelector(".temp");
+const max = document.querySelector(".high");
+const low = document.querySelector(".low");
 
 async function weather(query = null, unit = "metric") {
   let response = await fetch(
@@ -42,6 +44,8 @@ export function printForecast({ data, unit }) {
   iconEl.src = `${iconURL}`;
   iconEl.alt = iconName;
 
+  max.innerHTML = `${today.tempmax}${tempUnit}`;
+  low.innerHTML = `${today.tempmin}${tempUnit}`;
   // const speedUnit = unit === "us" ? "mph" : "km/h";
 
   // data.days.slice(0, 5).forEach((day, idx) => {
