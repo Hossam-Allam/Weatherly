@@ -61,7 +61,7 @@ fahrenheit.addEventListener("click", () => {
 
 input.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
-    const query = input.value;
+    query = input.value;
     handleWeather(query, unit);
     input.value = "";
     handleButtonClass();
