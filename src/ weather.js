@@ -32,7 +32,7 @@ export function printForecast({ data, unit }) {
   description.innerHTML = today.description;
   temp.innerHTML = `${today.temp}${tempUnit}`;
 
-  const iconName = today.icon;
+  const iconName = data.currentConditions.icon;
   const iconURL = ICON_MAP[iconName] || ICON_MAP["default"];
 
   let iconEl = document.querySelector(".weather-icon");
@@ -46,17 +46,6 @@ export function printForecast({ data, unit }) {
 
   max.innerHTML = `${today.tempmax}${tempUnit}`;
   low.innerHTML = `${today.tempmin}${tempUnit}`;
-  // const speedUnit = unit === "us" ? "mph" : "km/h";
-
-  // data.days.slice(0, 5).forEach((day, idx) => {
-  //   console.log(`Day ${idx + 1} (${day.datetime}):`);
-  //   console.log(
-  //     `  • Temp: ${day.temp}${tempUnit} (Feels like ${day.feelslike}${tempUnit})`
-  //   );
-  //   console.log(`  • Conditions: ${day.conditions}`);
-  //   console.log(`  • Wind: ${day.windspeed}${speedUnit}`);
-  //   console.log("---");
-  // });
 }
 
 export const handleWeather = function handleWeather(query, unit) {

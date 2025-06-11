@@ -154,7 +154,8 @@ body {
 }
 
 h1,
-h3 {
+h3,
+h4 {
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -187,7 +188,9 @@ h3 {
   transition: box-shadow 0.2s ease-in-out;
 }
 
-.weather-display:hover {
+.weather-display:hover,
+.uv:hover,
+.humidity:hover {
   box-shadow: 0 4px 8px rgba(181, 6, 239, 0.08), 0 16px 32px rgba(0, 0, 0, 0.16);
 }
 
@@ -216,4 +219,36 @@ h3 {
 .thermo {
   width: 30px;
   height: 30px;
+}
+
+.humidity,
+.uv {
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr;
+  height: 70%;
+  width: 80px;
+  padding: 5px;
+  align-items: flex-start;
+  background-color: rgba(201, 175, 243, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: box-shadow 0.2s ease-in-out;
+  border-radius: 10px;
+}
+h4 {
+  margin-top: 10px;
+}
+svg {
+  width: 40px;
+  height: 40px;
+  justify-self: center;
+}
+
+.h-value,
+.uv-value {
+  grid-column: 1 / -1;
+  justify-self: center;
 }
