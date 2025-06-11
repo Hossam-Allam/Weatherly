@@ -252,3 +252,31 @@ svg {
   grid-column: 1 / -1;
   justify-self: center;
 }
+
+/* SPINNY LOADER */
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* on top of everything */
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(0, 0, 0, 0.1);
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* keyframes */
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.app-content.blur {
+  filter: blur(6px);
+  pointer-events: none;
+}

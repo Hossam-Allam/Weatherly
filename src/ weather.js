@@ -7,6 +7,8 @@ const max = document.querySelector(".high");
 const low = document.querySelector(".low");
 const humidity = document.querySelector(".h-value");
 const uv = document.querySelector(".uv-value");
+const loader = document.querySelector(".loader");
+const appContent = document.querySelector(".app-content");
 
 async function weather(query = null, unit = "metric") {
   let response = await fetch(
@@ -54,9 +56,19 @@ export function printForecast({ data, unit }) {
 }
 
 export const handleWeather = function handleWeather(query, unit) {
+  loader.classList.remove("hidden");
+  loader.classList.add("shown");
+  appContent.classList.add("blur");
+
   weather(query, unit)
     .then(printForecast)
     .catch((error) => {
       console.error("Failed to fetch weather data:", error.message);
+    })
+    .finally(() => {
+      // 2) hide spinner and blur
+      loader.classList.remove("shown");
+      loader.classList.add("hidden");
+      appContent.classList.remove("blur");
     });
 };
