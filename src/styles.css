@@ -280,3 +280,51 @@ svg {
   filter: blur(6px);
   pointer-events: none;
 }
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 450px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+  }
+  #location {
+    width: 65%;
+  }
+
+  .suggestions-list {
+    width: 70%;
+  }
+
+  .site-name h1 {
+    font-size: 1.5rem;
+  }
+
+  .main {
+    margin-top: 30px;
+    width: 90%;
+  }
+
+  .weather-display {
+    width: 90%;
+    height: 100%;
+    grid-column: 1 / -1;
+  }
+
+  .unit-buttons {
+    width: 70%;
+    justify-content: center;
+  }
+
+  .info {
+    grid-column: 1 / -1;
+  }
+
+  .header {
+    width: 200px;
+  }
+
+  .site-name {
+    margin-left: 5px;
+  }
+}
