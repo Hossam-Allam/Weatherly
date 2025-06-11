@@ -1,18 +1,31 @@
 import "./styles.css";
 import "./form.js";
 import { handleWeather } from "./ weather.js";
+const loader = document.querySelector(".loader");
+const appContent = document.querySelector(".app-content");
+
+function showLoader() {
+  loader.classList.remove("hidden");
+  loader.classList.add("shown");
+  appContent.classList.add("blur");
+}
+
+function hideLoader() {
+  loader.classList.remove("shown");
+  loader.classList.add("hidden");
+  appContent.classList.remove("blur");
+}
 
 function requestAndShowLocalWeather() {
   if (!navigator.geolocation) {
     console.warn("Geolocation not supported by this browser.");
     return;
   }
-
+  showLoader();
   navigator.geolocation.getCurrentPosition(
     async ({ coords }) => {
       const { latitude, longitude } = coords;
 
-      // 2) Reverse-geocode to get a human city name
       const resp = await fetch(
         `https://us1.locationiq.com/v1/reverse?` +
           `key=pk.c1031754160ee83693d410c25b29d8c7` + //free key bud, get one yourself
@@ -28,6 +41,7 @@ function requestAndShowLocalWeather() {
         place.address.village ||
         place.display_name;
 
+      hideLoader();
       handleWeather(city);
     },
     (err) => {
