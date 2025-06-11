@@ -5,6 +5,8 @@ const description = document.querySelector(".description");
 const temp = document.querySelector(".temp");
 const max = document.querySelector(".high");
 const low = document.querySelector(".low");
+const humidity = document.querySelector(".h-value");
+const uv = document.querySelector(".uv-value");
 
 async function weather(query = null, unit = "metric") {
   let response = await fetch(
@@ -46,6 +48,9 @@ export function printForecast({ data, unit }) {
 
   max.innerHTML = `${today.tempmax}${tempUnit}`;
   low.innerHTML = `${today.tempmin}${tempUnit}`;
+
+  humidity.innerHTML = data.currentConditions.humidity + "%";
+  uv.innerHTML = data.currentConditions.uvindex;
 }
 
 export const handleWeather = function handleWeather(query, unit) {
